@@ -20,9 +20,10 @@ db_config = {
 conn = psycopg2.connect(**db_config)
 cursor = conn.cursor()
 # you can enter your query here
-query = "SELECT first_name,last_name AS Name FROM ACTOR WHERE first_name = 'JENNIFER';"
-cursor.execute(query=query)
+sql_query = "SELECT first_name,last_name AS Name FROM ACTOR WHERE first_name = 'JENNIFER';"
+cursor.execute(query=sql_query)
 result = cursor.fetchall()
 
 for row in result:
+
     print(row)
